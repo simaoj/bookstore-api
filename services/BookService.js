@@ -19,7 +19,9 @@ module.exports = class BookService {
                 author: data.author,
                 publisher: data.publisher,
                 year: data.year,
-                pages: data.pages
+                pages: data.pages,
+                isbn: data.isbn,
+                price: data.price
             }
             const response = await new Book(newBook).save();
             return response;
