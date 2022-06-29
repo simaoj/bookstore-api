@@ -12,8 +12,8 @@ module.exports = class UserController {
       if (!(email && password && first_name && last_name)) {
         res.status(400).send("All input is required");
       }
-      email = email.toLowerCase()
-      const oldUser = await User.findOne({ email });
+      const lowerCaseEmail = email.toLowerCase()
+      const oldUser = await User.findOne({ lowerCaseEmail });
 
       if (oldUser) {
         return res.status(409).send("User Already Exist. Please Login");
@@ -22,7 +22,7 @@ module.exports = class UserController {
       const dataUser = {
         first_name: first_name,
         last_name: last_name,
-        email: email,
+        email: lowerCaseEmail,
         password: password
       }
       const user = await UserService.createUser(dataUser);
