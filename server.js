@@ -23,3 +23,5 @@ app.listen(port, () => {
 
 app.use("/api/v1/books", bookRoutes);
 app.use("/api/v1/users", userRoutes);
+
+module.exports = app
