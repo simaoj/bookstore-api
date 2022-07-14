@@ -1,1 +1,3 @@
-Library app in Node.JS + MongoDB
+# Library API
+
+Library api in Node.JS + MongoDB
