@@ -54,7 +54,7 @@ module.exports = class BookService {
 
     static async deleteBook(bookId) {
         try {
-            const response = await Book.findOneAndDelete(bookId);
+            const response = await Book.findOneAndDelete({'_id':bookId});
             return response;
         } catch (error) {
             console.log(`Could not delete book ${error}`);
